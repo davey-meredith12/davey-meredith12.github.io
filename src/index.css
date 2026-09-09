@@ -603,6 +603,10 @@ img {
   font-size: 1.05rem;
 }
 
+.project-card.minimal .project-image {
+  border-bottom: 1px solid var(--border);
+}
+
 /* Contact */
 
 .contact-intro {

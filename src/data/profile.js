@@ -1,17 +1,16 @@
 export const profile = {
   name: "David Meredith",
-  title: "Software Developer",
+  title: "Software Engineer",
   location: "Arnold, MD",
   phone: "(801) 643-0177",
   email: "daviddmeredith@gmail.com",
   github: "https://github.com/davey-meredith12",
   linkedin: "https://www.linkedin.com/in/david-meredith35/",
   // Drop your headshot at public/profile/headshot.jpg and set this to "/profile/headshot.jpg"
-  photo: null,
+  photo: "/profile/headshot.JPG",
   resumeUrl: "/David_Meredith_Resume.pdf",
   about: [
-    "I'm a software developer with a B.S. in Computer Science (3.991 GPA, Magna Cum Laude, minor in Mathematics), graduated May 2026. During school I spent a year as a core engineer on a 15-person Agile team, building C++ gameplay systems, and TA'd Software Practice II, teaching C++ and Linux to 20+ students per session.",
-    "I like working close to the systems level — debugging pointer and memory issues, refactoring shared code for team-wide reuse — and I've also shipped mobile apps with Firebase backends and trained CNNs in PyTorch. Looking for a full-time software engineering role.",
+    "I’m passionate about software engineering, especially backend development.I’m excited to learn more about the field and gain hands-on experience. \nI’m currently looking for opportunities to apply what I’ve learned, keep challenging myself, and contribute to impactful projects. \nOutside of academics, I enjoy playing the piano and viola, baking, and of course, video games — which first sparked my interest in computer science and continues to inspire me today. \nIf you’re working in these areas or have advice, I’d love to connect and learn more! Feel free to reach out.",
   ],
   education: {
     school: "University of Utah",
@@ -46,6 +45,7 @@ export const profile = {
       "Qt Creator",
       "Linux",
       "Unreal Engine",
+      "Claude Code",
     ],
     "Data & ML": ["PyTorch", "TensorFlow", "Scikit-learn", "NumPy", "Matplotlib"],
     "Databases & Version Control": ["MySQL", "PostgreSQL", "Git", "GitHub", "Perforce"],

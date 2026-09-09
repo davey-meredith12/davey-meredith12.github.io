@@ -45,6 +45,11 @@ function GameProjectCard({ project }) {
 function MinimalProjectCard({ project }) {
   return (
     <article className="project-card minimal">
+      {project.image && (
+        <div className="project-image">
+          <img src={project.image} alt={project.name} />
+        </div>
+      )}
       <div className="project-content">
         <h4>{project.name}</h4>
         {project.tech.length > 0 && (

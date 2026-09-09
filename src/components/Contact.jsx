@@ -7,8 +7,7 @@ export default function Contact() {
       <div className="container">
         <SectionHeader number="04" title="Get In Touch" />
         <p className="contact-intro">
-          I'm currently looking for full-time job opportunities in tech or
-          games. Feel free to reach out!
+          I'm currently looking for full-time job opportunities in tech. Feel free to reach out!
         </p>
         <div className="contact-cards">
           <a href={`mailto:${profile.email}`} className="contact-card">

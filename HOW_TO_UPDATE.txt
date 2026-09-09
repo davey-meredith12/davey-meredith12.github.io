@@ -1,0 +1,83 @@
+HOW TO UPDATE THIS PORTFOLIO SITE
+==================================
+
+VIEW THE LIVE SITE
+-------------------
+https://davey-meredith12.github.io/
+
+The site rebuilds and redeploys automatically a minute or two after you
+push to the "main" branch (see .github/workflows, GitHub Actions handles
+this). You don't need to build or deploy anything by hand.
+
+
+WHERE CONTENT LIVES
+--------------------
+Almost all page content is data, not markup. Edit these files:
+
+  src/data/profile.js
+      Name, title, location, contact info, links, resume URL, the "About"
+      paragraphs, education, coursework list, and the Skills categories.
+
+  src/data/projects.js
+      Two arrays:
+        - otherProjects: general project cards (name, description, tech
+          list, optional github link, optional image).
+        - gameProjects: game dev project cards (name, description, tech
+          list, optional image, optional links array e.g. Steam/itch.io).
+
+  src/data/experience.js
+      Work/teaching experience entries: role, org, period, and a list of
+      bullet points.
+
+To add a new item, copy an existing object in the array (the curly-brace
+block with { ... }), paste it as a new entry, and edit the fields. To
+remove one, delete its object. Keep the commas between array entries.
+
+
+ADDING IMAGES
+--------------
+  Profile photo:
+    1. Drop the image file in public/profile/ (e.g. headshot.jpg)
+    2. In src/data/profile.js, set `photo: "/profile/headshot.jpg"`
+
+  Project images:
+    1. Drop the image file in public/projects/ (e.g. myproject.jpg)
+    2. In src/data/projects.js, set that project's `image` field to
+       "/projects/myproject.jpg"
+    3. Projects with `image: null` just render as a text-only card,
+       which is fine if you don't have an image yet.
+
+  Resume:
+    Replace the PDF at public/David_Meredith_Resume.pdf (keep the same
+    filename, or update `resumeUrl` in profile.js if you rename it).
+
+
+PREVIEWING CHANGES LOCALLY (optional but recommended)
+--------------------------------------------------------
+  npm install       (only needed once, or after pulling new dependencies)
+  npm run dev       (starts a local dev server, prints a URL like
+                      http://localhost:5173 — open it in your browser)
+
+The page hot-reloads as you edit the data files, so you can see changes
+immediately before publishing them.
+
+
+PUBLISHING YOUR CHANGES
+-------------------------
+From the project folder, run:
+
+  git add -A
+  git commit -m "Describe what you changed"
+  git push
+
+That's it. Once the push lands on GitHub, the "Deploy to GitHub Pages"
+Action runs automatically and the live site updates within a couple of
+minutes. You can watch its progress under the "Actions" tab of the repo
+on GitHub.
+
+
+IF SOMETHING BREAKS THE BUILD
+-------------------------------
+Run `npm run build` locally before pushing — if it finishes without
+errors, the GitHub Actions build will too. Common mistakes are a missing
+comma or an unmatched quote/bracket in one of the src/data/*.js files.

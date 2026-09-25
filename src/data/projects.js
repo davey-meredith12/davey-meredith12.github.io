@@ -59,6 +59,13 @@ export const otherProjects = [
     image: null,
     github: null,
   },
+  {
+    name: "Web Party Game",
+    description: "A self-hosted party game featuring a randomized player-selection wheel, interactive prompts, and turn-based gameplay.",
+    tech: ["Django", "Python"],
+    image: null,
+    github: null,
+},
 ];
 
 export const gameProjects = [

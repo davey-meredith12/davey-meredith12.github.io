@@ -65,7 +65,14 @@ export const otherProjects = [
     tech: ["Django", "Python"],
     image: null,
     github: null,
-},
+  },
+  {
+    name: "DC Metro Live Map",
+    description: "Real-time DC Metro dashboard with an interactive map, live train arrivals, service alerts, elevator outages and trip fares. A FastAPI backend fetches, cleans and caches data from the WMATA API.",
+    tech: ["Python", "FastAPI", "JavaScript", "Leaflet", "REST APIs"],
+    image: "/projects/dc_metro_image.png",
+    github: "https://github.com/davey-meredith12/dc-metro-map",
+  },
 ];
 
 export const gameProjects = [

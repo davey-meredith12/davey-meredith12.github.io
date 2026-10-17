@@ -38,6 +38,8 @@ export const profile = {
     Languages: ["C++", "C#", "Python", "C", "SQL", "Swift", "Kotlin", "Java", "HTML", "JavaScript"],
     "Frameworks & Tools": [
       "React",
+      "FastAPI",
+      "REST APIs",
       "SwiftUI",
       ".NET MAUI",
       "Docker",

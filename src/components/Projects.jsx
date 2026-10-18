@@ -22,23 +22,32 @@ function GameProjectCard({ project }) {
         </ul>
         <p className="project-description">{project.description}</p>
         {project.links.map((link) => (
-          <a
-            key={link.url}
-            href={link.url}
-            className="project-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span>{link.label}</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
-              <path d="M15 3h6v6" />
-              <path d="M10 14L21 3" />
-            </svg>
-          </a>
+          <ProjectLink key={link.url} {...link} />
         ))}
       </div>
     </article>
+  );
+}
+
+function ProjectLink({ url, label, note }) {
+  const anchor = (
+    <a href={url} className="project-link" target="_blank" rel="noreferrer">
+      <span>{label}</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+        <path d="M15 3h6v6" />
+        <path d="M10 14L21 3" />
+      </svg>
+    </a>
+  );
+
+  if (!note) return anchor;
+
+  return (
+    <div className="project-link-group">
+      {anchor}
+      <span className="project-link-note">{note}</span>
+    </div>
   );
 }
 
@@ -62,21 +71,10 @@ function MinimalProjectCard({ project }) {
           </ul>
         )}
         <p className="project-description">{project.description}</p>
-        {project.github && (
-          <a
-            href={project.github}
-            className="project-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span>Code</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
-              <path d="M15 3h6v6" />
-              <path d="M10 14L21 3" />
-            </svg>
-          </a>
-        )}
+        {project.github && <ProjectLink url={project.github} label="Code" />}
+        {project.links.map((link) => (
+          <ProjectLink key={link.url} {...link} />
+        ))}
       </div>
     </article>
   );

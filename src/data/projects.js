@@ -3,6 +3,11 @@
 // field below to the matching path (e.g. "/projects/nocturne.jpg").
 // Projects with image: null (or no image field) render as a text-only card.
 // This applies to both otherProjects and gameProjects.
+//
+// `github` is the repo URL (shown as a "Code" button). `links` is a list of
+// { label, url } buttons for deployed front ends, e.g.
+// { label: "Live Site", url: "https://..." }. Use [] for none. Add an optional
+// `note` to show small text under that link (e.g. a cold-start warning).
 
 export const otherProjects = [
   {
@@ -12,6 +17,7 @@ export const otherProjects = [
     tech: ["Python", "PyTorch"],
     image: null,
     github: null,
+    links: [],
   },
   {
     name: "Drawing App",
@@ -20,6 +26,7 @@ export const otherProjects = [
     tech: ["Kotlin", "Android Studio", "Firebase"],
     image: null,
     github: null,
+    links: [],
   },
   {
     name: "CanaryTests",
@@ -28,6 +35,7 @@ export const otherProjects = [
     tech: ["C++"],
     image: null,
     github: "https://github.com/davey-meredith12/CanaryTests",
+    links: [],
   },
   {
     name: "SailingApp",
@@ -36,6 +44,7 @@ export const otherProjects = [
     tech: ["Swift", "SwiftUI"],
     image: null,
     github: "https://github.com/davey-meredith12/SailingApp",
+    links: [],
   },
   {
     name: "PrimeTools",
@@ -44,6 +53,7 @@ export const otherProjects = [
     tech: ["C#", ".NET MAUI"],
     image: null,
     github: "https://github.com/davey-meredith12/PrimeTools",
+    links: [],
   },
   {
     name: "Explore London",
@@ -51,6 +61,7 @@ export const otherProjects = [
     tech: ["C++", "QtCreator"],
     image: null,
     github: null,
+    links: [],
   },
   {
     name: "Snake Game",
@@ -58,6 +69,7 @@ export const otherProjects = [
     tech: ["C#", ".NET", "MAUI"],
     image: null,
     github: null,
+    links: [],
   },
   {
     name: "Web Party Game",
@@ -65,13 +77,21 @@ export const otherProjects = [
     tech: ["Django", "Python"],
     image: null,
     github: null,
+    links: [],
   },
   {
-    name: "DC Metro Live Map",
-    description: "Real-time DC Metro dashboard with an interactive map, live train arrivals, service alerts, elevator outages and trip fares. A FastAPI backend fetches, cleans and caches data from the WMATA API.",
-    tech: ["Python", "FastAPI", "JavaScript", "Leaflet", "REST APIs"],
+    name: "DC Commute",
+    description: "Real-time DC Metro dashboard with live train arrivals, service alerts, elevator outages, trip fares and station entrances on an interactive map, backed by a caching FastAPI server.",
+    tech: ["Python", "FastAPI", "JavaScript", "Leaflet", "CSS", "WMATA API"],
     image: "/projects/dc_metro_image.png",
     github: "https://github.com/davey-meredith12/dc-metro-map",
+    links: [
+      {
+        label: "Live Site",
+        url: "https://dc-commute.onrender.com/",
+        note: "Hosted on a free tier, so it may take ~30 seconds to wake up.",
+      },
+    ],
   },
 ];
 
